@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>McWarrior AI</title>
+  <link rel="stylesheet" href="styles.css"
+</head>
+<body>
+  <div class="bg-layer" id="bgLayer" aria-hidden="true"></div>
+  <div class="overlay"></div>
+
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <h1>McWarrior AI</h1>
+        <p class="tag">Smart learning, Rwandan books ready</p>
+      </div>
+
+      <nav class="nav-horizontal" aria-label="Primary">
+        <div class="nav-row">
+          <button class="nav-btn active" data-section="chat-section">AI Chat</button>
+          <button class="login_register" data-section="register-section">Register</button>
+          <button class="login_register" data-section="login-section">Login</button>
+
+          <div class="premium-wrapper">
+            <button id="premiumBtn" class="nav-btn">Premium Features ▾</button>
+            <div class="premium-dropdown" id="premiumDropdown" role="menu" aria-hidden="true">
+              <button class="sub-btn" data-course="e_hacking">Ethical Hacking</button>
+              <button class="sub-btn" data-course="wb_dev">Software Development</button>
+              <button class="sub-btn" data-course="network">Networking</button>
+            </div> 
+          </div>
+
+          <button class="nav-btn" data-section="contact-section">Contact</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-area">
+    <!-- AI Chat Section -->
+    <section id="chat-section" class="panel active">
+      <h2>Chat with McWarrior AI</h2>
+      <div class="chat-wrap">
+        <div id="messages" class="messages" role="log" aria-live="polite"></div>
+        <form id="chatForm" class="chat-form" onsubmit="return false;">
+          <input id="messageInput" type="text" placeholder="Ask McWarrior anything..." autocomplete="off" required>
+          <button id="sendBtn" type="submit">Send</button>
+        </form>
+  <div class="oauth">
+    <a class="btn google" href="/auth/google" id="googleLogin">Sign in with Google</a>
+  </div>
+      </div>
+    </section>
+
+    <!-- Register Section -->
+    <section id="register-section" class="panel" aria-hidden="true">
+      <h2>Create Account</h2>
+      <form id="registerForm" class="auth-form">
+        <input id="regEmail" type="email" placeholder="Email" required>
+        <input id="regPassword" type="password" placeholder="Password" required>
+        <button id="registerBtn" type="submit">Register</button>
+        <div class="or">or</div>
+        <button id="regGoogleBtn" type="button" class="google-btn">Login with Google</button>
+      </form>
+      <div id="registerMsg" class="muted"></div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login-section" class="panel" aria-hidden="true">
+      <h2>Login to Your Account</h2>
+      <form id="loginForm" class="auth-form">
+        <input id="loginEmail" type="email" placeholder="Email" required>
+        <input id="loginPassword" type="password" placeholder="Password" required>
+        <button id="loginBtn" type="submit">Login</button>
+        <div class="or">or</div>
+        <button id="loginGoogleBtn" type="button" class="google-btn">Login with Google</button>
+      </form>
+      <div id="loginMsg" class="muted"></div>
+    </section>
+
+    <!-- Course Section -->
+    <section id="course-section" class="panel" aria-hidden="true">
+      <h2>Premium Course</h2>
+      <div id="courseContent" class="course-content">
+        <h3>Select a course from Premium Features above</h3>
+        <p class="muted">After enrollment, you’ll access videos and downloadable materials.</p>
+      </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos-section" class="panel" aria-hidden="true">
+      <h2>Course Videos</h2>
+      <div class="video-list" id="videoList">
+        <!-- Populated dynamically -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-section" class="panel" aria-hidden="true">
+      <h2>Contact</h2>
+      <p>For custom setup or enrollment questions, email me at:
+        <a href="mailto:esdrasthewarrior4@gmail.com">esdrasthewarrior4@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <small>© McWarrior AI — Built by Esdras for learning. </small>
+  </footer>
+
+ <script src="app.js"></script>
+</body>
+</html>

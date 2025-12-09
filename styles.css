@@ -1,0 +1,63 @@
+:root {
+  --accent:#00ffcc;
+  --card: rgba(3,7,18,0.6);
+  --muted:#b3c0c8;
+  --glass: rgba(255,255,255,0.04);
+  --bg-image:url('https://images.unsplash.com/photo-1505765050790-2f3d6b3b5a9a?auto=format&fit=crop&w=1950&q=80');
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:#071022;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#e8f0f6;}
+
+/* Background */
+.bg-layer{position:fixed;inset:0;background-image:var(--bg-image);background-size:cover;background-position:center;z-index:-2;}
+.overlay{position:fixed;inset:0;background:rgba(2,6,23,0.55);z-index:-1;}
+
+/* Layout */
+.container{max-width:1100px;margin:0 auto;padding:18px;}
+.header-grid{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+
+/* Nav */
+.nav-row{display:flex;gap:10px;align-items:center}
+.nav-btn,.login_register{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:inherit;cursor:pointer;font-weight:600;
+  backdrop-filter:blur(4px);transition:transform .12s ease,box-shadow .12s ease;
+}
+.nav-btn:hover,.login_register:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(2,6,23,0.6)}
+.nav-btn.active,.login_register.active{background:rgba(0,255,204,0.08);border-color:rgba(0,255,204,0.18);color:var(--accent)}
+
+/* Panels */
+.main-area{margin-top:20px}
+.panel{display:none;padding:18px;border-radius:12px;background:var(--card);border:1px solid var(--glass);min-height:60vh}
+.panel.active{display:block}
+
+/* Chat styling */
+.chat-wrap{display:flex;flex-direction:column;gap:12px;position:relative;}
+.messages{min-height:280px;max-height:480px;overflow:auto;padding:12px;border-radius:8px;background:rgba(2,6,12,0.45);border:1px solid rgba(255,255,255,0.02);}
+.msg{margin:8px 0;padding:10px 14px;border-radius:12px;max-width:80%;word-wrap:break-word;box-shadow:0 6px 18px rgba(0,0,0,0.5);}
+.msg.user{align-self:flex-end;background:linear-gradient(90deg, rgba(0,255,204,0.95), rgba(0,255,204,0.8));color:#032;border-bottom-right-radius:4px;}
+.msg.bot{align-self:flex-start;background:rgba(255,255,255,0.04);color:var(--muted);border-bottom-left-radius:4px;}
+.msg.typing{opacity:0.7;font-style:italic;}
+.chat-form{display:flex;gap:8px;position:sticky;bottom:0;background:rgba(7,16,34,0.9);padding-top:6px;border-top:1px solid rgba(255,255,255,0.02);}
+.chat-form input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;}
+.chat-form button{padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:#032;font-weight:700;cursor:pointer;}
+
+/* Auth Forms */
+.auth-form{display:flex;flex-direction:column;gap:10px;max-width:420px;}
+.auth-form input{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;}
+.auth-form button{padding:10px;border-radius:8px;border:none;cursor:pointer;font-weight:600;}
+.auth-form button[type="submit"]{background:var(--accent);color:#032;}
+.google-btn{background:#fff;color:#000;border-radius:8px;padding:10px;font-weight:700;}
+.or{text-align:center;color:var(--muted);font-size:13px;}
+
+/* Course content */
+.course-card{padding:12px;background:rgba(255,255,255,0.03);border-radius:10px;}
+
+/* Videos */
+.video-list{display:flex;flex-direction:column;gap:20px;}
+.video-card{background:rgba(255,255,255,0.03);padding:12px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.6);}
+.video-card video{width:100%;border-radius:8px;}
+.video-card a{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none;padding:6px 8px;border-radius:8px;background:rgba(0,255,204,0.06);}
+
+/* Footer */
+.site-footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px;padding:20px;}
